@@ -1,0 +1,58 @@
+[
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"PDA_1",
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en e6,  estando ausentes sus compañeros de las columnas d y c."
+		}
+    },
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"PDA_2",
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en c6,  estando ausentes sus compañeros de las columnas d y e."
+		}
+	},
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"PDA_3",
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en e3,  estando ausentes sus compañeros de las columnas d y e."
+		}
+	},
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"PDA_4",
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en c3,  estando ausentes sus compañeros de las columnas d y e."
+		}
+	},
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"Peones colgantes 1",
+			"structure_description": "Esta estructura se caracteriza por la ausencia de peones para las blancas en las columnas b y e, un par de peones centrales en c4 y d4 contra un peón negro en e6,  estando ausentes sus compañeros de las columnas c y d."
+		}
+	},
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"Peones colgantes 2",
+			"structure_description": "Esta estructura se caracteriza por la ausencia de peones para las negras en las columnas b y e, un par de peones centrales en c5 y d5 contra un peón blanco en e3,  estando ausentes sus compañeros de las columnas c y d."
+		}
+	}
+    {
+        "model":"oxs.Structures",
+        "fields" : 
+        {
+            "structure_name":"Caro-Kann",
+			"structure_description": "Esta estructura se caracteriza por la ausencia del peón en la columna d para las negras y el posicionamento de sus compañeros en las columnas c6 y e6.  Las blancas carecen de peón en la columna e y tienen un peón en d4, acompañado por un peón en la columna c que puede estar en diferentes posiciones."
+		}
+	}
+]

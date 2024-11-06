@@ -1,5 +1,10 @@
 from django.db import models
 
+COLOR_SIDE = [
+	("White", "White"),
+	("Black", "Black"),
+]
+
 # Create your models here.
 class User(models.Model):
 	name = models.CharField(max_length = 100, unique = True)
@@ -8,6 +13,7 @@ class User(models.Model):
 
 class Repertoires(models.Model):
 	repertoire_name = models.CharField(max_length = 30)
+	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White");
 	user = models.ForeignKey(User, on_delete = models.CASCADE, default = 1)
 	def __str__(self):
 		return self.repertoire_name
@@ -27,6 +33,7 @@ class Structures(models.Model):
 	
 class Variants(models.Model):
 	moves = models.CharField(max_length = 300)
+	variants_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White");
 	structures = models.ForeignKey(Structures, on_delete = models.CASCADE, default = 1)
 	def __str__(self):
 		return self.moves
