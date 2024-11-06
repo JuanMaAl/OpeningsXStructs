@@ -13,7 +13,7 @@ class User(models.Model):
 
 class Repertoires(models.Model):
 	repertoire_name = models.CharField(max_length = 30)
-	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White");
+	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White")
 	user = models.ForeignKey(User, on_delete = models.CASCADE, default = 1)
 	def __str__(self):
 		return self.repertoire_name
@@ -33,7 +33,7 @@ class Structures(models.Model):
 	
 class Variants(models.Model):
 	moves = models.CharField(max_length = 300)
-	variants_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White");
-	structures = models.ForeignKey(Structures, on_delete = models.CASCADE, default = 1)
+	variants_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White")
+	structures = models.ForeignKey(Structures, to_field = "structure_name", on_delete = models.CASCADE, default = "PDA_1")
 	def __str__(self):
 		return self.moves
