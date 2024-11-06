@@ -4,15 +4,40 @@
         "fields" : 
         {
             "structure_name":"PDA_1",
-			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en e6,  estando ausentes sus compañeros de las columnas d y c."
-		}
+	    "structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en e6,  estando ausentes sus compañeros de las columnas d y c.",
+	    "structure_map":" 
+	    	 #|a|b|c|d|e|f|g|h|#
+		 8| | | | | | | | |8
+		 7| | | | | | | | |7
+		 6| | | | | | | | |6
+		 5| | | | | | | | |5
+		 4| | | | | | | | |4
+		 3| | | | | | | | |3
+		 2| | | | | | | | |2
+		 1| | | | | | | | |1
+		 #|a|b|c|d|e|f|g|h|#
+		 "
+	}
     },
     {
         "model":"oxs.Structures",
         "fields" : 
         {
             "structure_name":"PDA_2",
-			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en c6,  estando ausentes sus compañeros de las columnas d y e."
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en c6,  estando ausentes sus compañeros de las columnas d y e.",
+	    "structure_map":"
+	    	#|a|b|c|d|e|f|g|h|#
+		8| | | | | | | | |8
+		7| | | | | | | | |7
+		6| | | | | | | | |6
+		5| | | | | | | | |5
+		4| | | | | | | | |4
+		3| | | | | | | | |3
+		2| | | | | | | | |2
+		1| | | | | | | | |1
+		#|a|b|c|d|e|f|g|h|#
+		"
+	}
 		}
 	},
     {

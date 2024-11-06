@@ -28,6 +28,7 @@ class RepertoireVariants(models.Model):
 class Structures(models.Model):
 	structure_name = models.CharField(max_length = 30, unique = True)
 	structure_description = models.CharField(max_length = 300)
+    structure_map = models.CharField(max_length = 300)
 	def __str__(self):
 		return self.structure_name
 	
