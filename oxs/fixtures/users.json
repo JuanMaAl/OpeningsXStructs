@@ -1,0 +1,9 @@
+[
+    {
+        "model":"oxs.User",
+        "fields" : 
+        {
+            "name":"John Doe"
+        }
+    }
+]
