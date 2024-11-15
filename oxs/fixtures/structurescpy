@@ -4,23 +4,48 @@
         "fields" : 
         {
             "structure_name":"PDA_1",
-	    "structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en e6 o e7, estando ausentes sus compañeros de las columnas d y c."
-		}
+	    "structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en e6,  estando ausentes sus compañeros de las columnas d y c.",
+	    "structure_map":"
+		 #|a|b|c|d|e|f|g|h|#
+		 8| | | | | | | | |8
+		 7|X|X| | | |X|X|X|7
+		 6| | | | |X| | | |6
+		 5| | | | | | | | |5
+		 4| | | |O| | | | |4
+		 3| | | | | | | | |3
+		 2|O|O| | | |O|O|O|2
+		 1| | | | | | | | |1
+		 #|a|b|c|d|e|f|g|h|#
+		 "
+	}
     },
     {
         "model":"oxs.Structures",
         "fields" : 
         {
             "structure_name":"PDA_2",
-			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en c6 o c7,  estando ausentes sus compañeros de las columnas d y e."
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las blancas en las columnas c y e, un peón central en d4 contra un peón negro en c6,  estando ausentes sus compañeros de las columnas d y e.",
+	    "structure_map":"
+	    #|a|b|c|d|e|f|g|h|#
+		8| | | | | | | | |8
+		7|X|X| | | |X|X|X|7
+		6| | |X| | | | | |6
+		5| | | | | | | | |5
+		4| | | |O| | | | |4
+		3| | | | | | | | |3
+		2|O|O| | | |O|O|O|2
+		1| | | | | | | | |1
+		#|a|b|c|d|e|f|g|h|#
+		"
+	}
 		}
 	},
- {
+    {
         "model":"oxs.Structures",
         "fields" : 
         {
             "structure_name":"PDA_3",
-			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en e3 o e2,  estando ausentes sus compañeros de las columnas d y e."
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en e3,  estando ausentes sus compañeros de las columnas d y e."
 		}
 	},
     {
@@ -28,7 +53,7 @@
         "fields" : 
         {
             "structure_name":"PDA_4",
-			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en c3 o c2,  estando ausentes sus compañeros de las columnas d y e."
+			"structure_description": "Esta estructura de Peón de Dama Aislado se caracteriza por la ausencia de peones para las negras en las columnas c y e, un peón central en d5 contra un peón blanco en c3,  estando ausentes sus compañeros de las columnas d y e."
 		}
 	},
     {
@@ -92,7 +117,7 @@
         "fields" : 
         {
             "structure_name":"Centro de Peones Grünfeld 1",
-			"structure_description": "Esta estructura se caracteriza por la ausencia para las blancas del peón de la columna b y los peones centrales posicionados en c3, d4 y e4 o e5. Por su parte, las negras tienen ausente el peón de la columna d."
+			"structure_description": "Esta estructura se caracteriza por la ausencia para las blancas del peón de la columna b y los peones centrales posicionados en c3, d4 y e4. Por su parte, las negras tienen ausente el peón de la columna d. ."
 		}
     },
     {
@@ -100,7 +125,7 @@
         "fields" : 
         {
             "structure_name":"Centro de Peones Grünfeld 2",
-			"structure_description": "Esta estructura se caracteriza por la ausencia para las negras del peón de la columna b y los peones centrales posicionados en c6, d5 y e5 o e4. Por su parte, las blancas tienen ausente el peón de la columna d."
+			"structure_description": "Esta estructura se caracteriza por la ausencia para las negras del peón de la columna b y los peones centrales posicionados en c6, d5 y e5. Por su parte, las blancas tienen ausente el peón de la columna d. ."
 		}
     }
 ]
