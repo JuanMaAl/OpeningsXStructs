@@ -5,9 +5,9 @@ from .models import Structures
 
 # Create your views here.
 
-#def structures(request):
-#	structures = Structures.object.all()
-#	return render(request, 'structures.html', {'structures': structures})
+def structures(request):
+	structures = Structures.objects.all()
+	return render(request, 'structures.html', {'structures': structures})
 
 def hello_juan(request):
 	return HttpResponse("Hello, Juan!")
