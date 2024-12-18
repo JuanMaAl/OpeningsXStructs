@@ -2,12 +2,30 @@
 <html>
 	<head>
 		<title>Chess Structures</title>
+		{% load bootstrap5 %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
 	</head>
 	<body>
 		<h1>Estructuras de Peones</h1>
-		<ul>
+		</br>
+		<ul style="list-style: none;">
 			{% for structure in structures %}
-				<li>{{structure.structure_name}}</li>
+				<li>
+					<div class="card" style="width: 20rem;">
+						<div class="card-body">
+							<h5 class="text-center 
+							text-uppercase">
+								{{structure.structure_name}}
+							</h5>
+  						<img src="/static/{{structure.structure_name}}.jpg" class="card-img-top" alt="...">
+							<p class="card-text">
+								{{structure.structure_description}}
+							</p>
+  						</div>
+					</div>
+					</br>
+				</li>
 			{% endfor %}
 		</ul>
 	</body>
