@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+	</head>
+	<body>
+		<h1>Home de {{ user.0 }}</h1>
+		<h2>Listado de Repertorios</h2>
+
+		<ul>
+		
+			{% for repertoire in repertoires %}
+				<li>{{ repertoire.repertoire_name }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

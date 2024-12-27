@@ -14,7 +14,7 @@ class User(models.Model):
 class Repertoires(models.Model):
 	repertoire_name = models.CharField(max_length = 30)
 	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White")
-	user = models.ForeignKey(User, on_delete = models.CASCADE, default = 1)
+	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
 	def __str__(self):
 		return self.repertoire_name
 
