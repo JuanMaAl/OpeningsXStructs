@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Repertoire</title>
+	</head>
+	<body>
+		<h2>Crear un Nuevo Repertorio<h2>
+		<form method="post" 
+		action="{% url 'oxs:process_new_repertoire' %}">
+			{ %csrf_token %}
+			<label for="repertoire_name">Nombre del Repertorio: </label>
+			<input type="text" name="repertoire_name" required>
+			<br>
+			<label for="repertoire_color">Color del Repertorio: </label>
+			<input type="radio" name="repertoire_color" 
+			value="White" checked>Blancas
+			<br>
+			<input type="radio" name="repertoire_color"
+			value="Black">Negras
+			<br>
+			<input type="radio" name="user"
+			value={{user.0}} checked>{{ user.0 }}
+			<br>
+			<button type="submit">Crear</button>
+		</form>
+	</body>
+</html>
