@@ -13,13 +13,16 @@ def home(request, user_name):
 
 def new_repertoire(request, user_name):
 	user = User.objects.filter(name = user_name)
-	return render(request, 'new_repertoire.html', { 'user' : user})
+	return render(request, 'new_repertoire.html', { 'user' : user_name})
 
-def process_new_repertoire(request):
+def process_new_repertoire(request, user):
 	if request.method =='POST':
 		repertoire_name = request.POST.get('repertoire_name')
 		repertoire_color = request.POST.get('repertoire_color')
-		user = request.POST.get('user')
+		try:
+			user = User.objects.get(name = user)
+		except User.DoesNotExist:
+			return HttpResponse("Error uno al crear el repertorio")
 		repertoire = Repertoires(repertoire_name=repertoire_name,
 		repertoire_color=repertoire_color, user=user)
 		repertoire.save()
