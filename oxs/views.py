@@ -23,10 +23,14 @@ def process_new_repertoire(request, user):
 			user = User.objects.get(name = user)
 		except User.DoesNotExist:
 			return HttpResponse("Error uno al crear el repertorio")
-		repertoire = Repertoires(repertoire_name=repertoire_name,
-		repertoire_color=repertoire_color, user=user)
-		repertoire.save()
-		return HttpResponse("Nuevo Repertorio Creado")
+		if Repertoires.objects.filter(user=user, repertoire_name=repertoire_name):
+			return HttpResponse("Error: No puedes tener dos repertorios con el mismo nombre")
+			
+		else:
+			repertoire = Repertoires(repertoire_name=repertoire_name,
+			repertoire_color=repertoire_color, user=user)
+			repertoire.save()
+			return HttpResponse("Nuevo Repertorio Creado")
 	else:
 		return HttpResponse("Error al crear el repertorio")
 

@@ -15,6 +15,8 @@ class Repertoires(models.Model):
 	repertoire_name = models.CharField(max_length = 30)
 	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White")
 	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
+	class Meta:
+		unique_together = ('repertoire_name', 'user')
 	def __str__(self):
 		return self.repertoire_name
 
