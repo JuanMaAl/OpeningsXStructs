@@ -23,7 +23,8 @@ class Repertoires(models.Model):
 class RepertoireVariants(models.Model):
 	structure = models.CharField(max_length = 30)
 	moves = models.CharField(max_length = 300)
-	repertoires = models.ManyToManyField(Repertoires)
+	repertoire_name = models.CharField(max_length = 30)
+	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
 	def __str__(self):
 		return self.moves
 

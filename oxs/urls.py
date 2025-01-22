@@ -15,6 +15,9 @@ urlpatterns = [
 	path('process-new-repertoire/<str:user>/', 
 	views.process_new_repertoire, 
 	name='process_new_repertoire'),
+
+	path('open-repertoire/<str:user>/<str:repertoire_name>/',
+	views.open_repertoire, name='open_repertoire'),
 	
 	path('delete-repertoire/<str:user>/<str:repertoire_name>/',
 	views.delete_repertoire, name='delete_repertoire'),
