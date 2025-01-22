@@ -11,6 +11,17 @@ def home(request, user_name):
 	return render(request, 'home.html', 
 	{'user': user, 'repertoires': repertoires})
 
+def structures(request):
+	structures = Structures.objects.all()
+	return render(request, 'structures.html', {'structures': structures})
+
+def variants(request, structure_name):
+	variants = Variants.objects.filter(structures = structure_name)
+	return render(request, 'variants.html', {'variants': variants})
+
+# Repertoire CRUD Operations 
+
+# START Creating New Repertoire Operation
 def new_repertoire(request, user_name):
 	user = User.objects.filter(name = user_name)
 	return render(request, 'new_repertoire.html', { 'user' : user_name})
@@ -33,11 +44,29 @@ def process_new_repertoire(request, user):
 			return HttpResponse("Nuevo Repertorio Creado")
 	else:
 		return HttpResponse("Error al crear el repertorio")
+# END Creating New Repertoire Operation
 
-def structures(request):
-	structures = Structures.objects.all()
-	return render(request, 'structures.html', {'structures': structures})
+# START Delete Repertoire Operation
 
-def variants(request, structure_name):
-	variants = Variants.objects.filter(structures = structure_name)
-	return render(request, 'variants.html', {'variants': variants})
+def delete_repertoire(request, user, repertoire_name):
+	rep_to_delete = Repertoires.objects.filter(user=user, 
+	repertoire_name=repertoire_name)
+	context = {
+		'user' : user,
+		'repertoire_name' : repertoire_name
+	}
+	return render(request, 'delete_repertoire.html', context)
+
+def process_delete_repertoire(request, user, repertoire_name):
+	if request.method =='POST':
+		try:
+			repertoire = Repertoires.objects.get(user=user, 
+			repertoire_name=repertoire_name)
+			repertoire.delete()
+			return HttpResponse("Repertorio Borrado")
+		except Repertoires.DoesNotExist:
+			return HttpResponse("Error no se encuentra el repertorio")
+	else:
+		return HttpResponse("Error al borrar el repertorio")
+
+# END Delete Repertoire Operation

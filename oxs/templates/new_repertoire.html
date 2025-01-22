@@ -7,7 +7,7 @@
 		<h2>Crear un Nuevo Repertorio {{ user.0 }}<h2>
 		<form method="post" 
 		action="{% url 'process_new_repertoire' user=user %}">
-			{% csrf_token %}i
+			{% csrf_token %}
 			<label for="repertoire_name">Nombre del Repertorio: </label>
 			<input type="text" name="repertoire_name" required>
 			<br>

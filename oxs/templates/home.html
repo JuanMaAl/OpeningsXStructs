@@ -10,8 +10,19 @@
 		<ul>
 		
 			{% for repertoire in repertoires %}
-				<li>{{ repertoire.repertoire_name }}</li>
+				<li>{{ repertoire.repertoire_name }} | 
+				{{ repertoire.repertoire_color }} |
+					<a 
+					href="/delete-repertoire/{{ repertoire.user }}
+					/{{ repertoire.repertoire_name }}/">
+					Eliminar
+					</a>
+				</li>
 			{% endfor %}
 		</ul>
+		<br>
+		<a href="/new-repertoire/{{ user.0 }}/">
+		Crear un nuevo Repertorio
+		<a>
 	</body>
 </html>
