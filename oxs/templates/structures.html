@@ -10,7 +10,7 @@
 		<h1>Estructuras de Peones</h1>
 		</br>
 		<ul style="list-style: none;">
-			{% for structure in structures %}
+			{% for structure in context.structures %}
 				<li>
 					<div class="card" style="width: 20rem;">
 						<div class="card-body">
@@ -24,7 +24,7 @@
 							<p class="card-text">
 								{{structure.structure_description}}
 							</p>
-							<a href="{%url 'variants' structure_name=structure.structure_name %}">
+							<a href="/variants/{{ context.user }}/{{ context.repertoire_name }}/{{ context.repertoire_color }}/{{ structure.structure_name}}/">
 							Variantes
 							</a>
   						</div>

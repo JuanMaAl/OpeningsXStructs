@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Variants</title>
+		<title>Variantes Repertorio</title>
 	</head>
 	<body>
 		<h1>Variantes del Repertorio</h1>
+		<br>
+		<a href="/structures/{{ context.user }}/{{ context.repertoire_name }}/{{ context.repertoire_color }}">
+		Añadir Variante
+		</a>
 		<ul>
-		{% for variant in variants %}
+		{% for variant in context.variants %}
 			<br>
 			<li>{{ variant.moves }}</li>
 		{% endfor %}
