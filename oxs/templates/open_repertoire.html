@@ -13,6 +13,21 @@
 		{% for variant in context.variants %}
 			<br>
 			<li>{{ variant.moves }}</li>
+			<form method="POST"
+			action="{% url 'del_from_repertoire'  %}">
+				{% csrf_token %}
+				<input type="hidden" name="structure"
+				value="{{ variant.structure }}">
+				<input type="hidden" name="moves"
+				value="{{ variant.moves }}">
+				<input type="hidden" name="repertoire_name"
+				value="{{ context.repertoire_name }}">
+				<input type="hidden" name="user_id"
+				value="{{ context.user}}">
+				<input type="hidden" name="repertoire_color"
+				value="{{ context.repertoire_color }}">
+				<button type="Submit">Eliminar del Repertorio</button>
+			</form>
 		{% endfor %}
 		</ul>
 	</body>

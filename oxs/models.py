@@ -25,6 +25,8 @@ class RepertoireVariants(models.Model):
 	moves = models.CharField(max_length = 300)
 	repertoire_name = models.CharField(max_length = 30)
 	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
+	class Meta:
+		unique_together = ('moves', 'repertoire_name', 'user')
 	def __str__(self):
 		return self.moves
 

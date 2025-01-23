@@ -22,6 +22,9 @@ urlpatterns = [
 	path('add-to-repertoire/',
 	views.add_to_repertoire, name='add_to_repertoire'),
 
+	path('del-from-repertoire/',
+	views.del_from_repertoire, name='del_from_repertoire'),
+
 	path('delete-repertoire/<str:user>/<str:repertoire_name>/',
 	views.delete_repertoire, name='delete_repertoire'),
 
