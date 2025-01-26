@@ -3,6 +3,14 @@ from . import views
 
 urlpatterns = [
 	path('', views.login_user, name='login_user'),
+	path('logout_user/', views.logout_user, name='logout_user'),
+
+	path('new-user/', views.new_user, 
+	name='new_user'),
+	
+	path('process-new-user/', 
+	views.process_new_user, 
+	name='process_new_user'),
 
 	path('structures/<str:repertoire_name>/<str:repertoire_color>/', views.structures, name='structures'),
 	

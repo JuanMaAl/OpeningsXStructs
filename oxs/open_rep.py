@@ -1,7 +1,9 @@
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import RepertoireVariants
 
+@login_required(login_url='/')
 def open_repertoire(request, repertoire_name, repertoire_color):
 	try:
 		user = request.user

@@ -5,6 +5,7 @@
 	</head>
 	<body>
 		<h1>Home de {{ user.username }}</h1>
+		<a href="{% url 'logout_user' %}">Cerrar sesión</a>
 		<h2>Listado de Repertorios</h2>
 
 		<ul>

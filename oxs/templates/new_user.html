@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nuevo Usuario</title>
+	</head>
+	<body>
+		<h2>Crear un Nuevo Usuario<h2>
+		<form method="post" 
+		action="{% url 'process_new_user' %}">
+			{% csrf_token %}
+			<label for="username">Nombre del Usuario: </label>
+			<input type="text" name="username" required>
+			<br>
+			<label for="email">Correo Electrónico: </label>
+			<input type="email" name="email" required>
+			<br>
+			<label for="password1">Contraseña: </label>
+			<input type="password" name="password1" required>
+			<br>
+			<label for="password2">Contraseña: </label>
+			<input type="password" name="password2" required>
+			<br>
+			<button type="submit">Registrarse</button>
+		</form>
+	</body>
+</html>

@@ -1,7 +1,9 @@
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Repertoires, RepertoireVariants
 
+@login_required(login_url='/')
 def delete_repertoire(request, repertoire_name):
 	user = request.user
 	rep_to_delete = Repertoires.objects.filter(user=user, 
@@ -11,6 +13,7 @@ def delete_repertoire(request, repertoire_name):
 	}
 	return render(request, 'delete_repertoire.html', context)
 
+@login_required(login_url='/')
 def process_delete_repertoire(request, repertoire_name):
 	if request.method =='POST':
 		user = request.user
