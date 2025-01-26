@@ -6,6 +6,7 @@ from .delete_rep import delete_repertoire, process_delete_repertoire
 from .open_rep import open_repertoire
 from .add_to_rep import add_to_repertoire
 from .del_from_rep import del_from_repertoire
+from .login import login_user
 
 # Create your views here.
 
