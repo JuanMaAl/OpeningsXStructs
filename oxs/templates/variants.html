@@ -6,21 +6,21 @@
 	<body>
 		<h1>Variantes</h1>
 		<ul>
-		{% for variant in context.variants %}
+		{% for variant in variants %}
 			<li>{{ variant.moves }}</li>
 			<form method="POST" 
 			action="{% url 'add_to_repertoire'  %}">
 				{% csrf_token %}
 				<input type="hidden" name="structure" 
-				value="{{ context.structure }}">
+				value="{{ structure }}">
 				<input type="hidden" name="moves" 
 				value="{{ variant.moves }}">
 				<input type="hidden" name="repertoire_name" 
-				value="{{ context.repertoire_name }}">
+				value="{{ repertoire_name }}">
 				<input type="hidden" name="user_id" 
-				value="{{ context.user_id }}">
+				value="{{ user_id }}">
 				<input type="hidden" name="repertoire_color" 
-				value="{{ context.repertoire_color }}">
+				value="{{ repertoire_color }}">
 				<button type="Submit">Añadir al Repertorio</button>
 			</form>
 			<br>

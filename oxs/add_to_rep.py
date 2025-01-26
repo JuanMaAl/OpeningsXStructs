@@ -18,6 +18,6 @@ def add_to_repertoire(request):
 		try:
 			new_variation.save()
 		except:
-			return redirect(f'/open-repertoire/{ user_id }/{ repertoire_name }/{ repertoire_color}/')
+			return redirect(f'/open-repertoire/{ repertoire_name }/{ repertoire_color}/')
 			
-		return redirect(f'/open-repertoire/{ user_id }/{ repertoire_name }/{ repertoire_color}/')
+		return redirect(f'/open-repertoire/{ repertoire_name }/{ repertoire_color}/')

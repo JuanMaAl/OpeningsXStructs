@@ -11,7 +11,7 @@ def login_user(request):
 		user = authenticate(request, username=username, password=password)
 		if user is not None:
 			login(request, user)
-			return redirect (f'/home/{username}')
+			return redirect (f'/home')
 		else:
 		    #	error_message = "Login fallido: usuario o password incorrecto"
 		    messages.error(request, "Login fallido, usuario o password incorrecto")

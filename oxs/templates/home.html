@@ -4,7 +4,7 @@
 		<title>Home</title>
 	</head>
 	<body>
-		<h1>Home de {{ user.0 }}</h1>
+		<h1>Home de {{ user.username }}</h1>
 		<h2>Listado de Repertorios</h2>
 
 		<ul>
@@ -13,22 +13,20 @@
 				<li>{{ repertoire.repertoire_name }} | 
 				{{ repertoire.repertoire_color }} |
 					<a 
-					href="/open-repertoire/{{ repertoire.user }}
-					/{{ repertoire.repertoire_name }}
+					href="/open-repertoire/{{ repertoire.repertoire_name }}
 					/{{ repertoire.repertoire_color }}/">
 					Abrir
 					</a>
 					|
 					<a 
-					href="/delete-repertoire/{{ repertoire.user }}
-					/{{ repertoire.repertoire_name }}/">
+					href="/delete-repertoire/{{ repertoire.repertoire_name }}/">
 					Eliminar
 					</a>
 				</li>
 			{% endfor %}
 		</ul>
 		<br>
-		<a href="/new-repertoire/{{ user.0 }}/">
+		<a href="/new-repertoire/">
 		Crear un nuevo Repertorio
 		<a>
 	</body>

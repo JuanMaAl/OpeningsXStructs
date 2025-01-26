@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 COLOR_SIDE = [
 	("White", "White"),
@@ -6,15 +7,11 @@ COLOR_SIDE = [
 ]
 
 # Create your models here.
-class User(models.Model):
-	name = models.CharField(max_length = 100, unique = True)
-	def __str__(self):
-		return self.name
 
 class Repertoires(models.Model):
 	repertoire_name = models.CharField(max_length = 30)
 	repertoire_color = models.CharField(max_length = 10, choices = COLOR_SIDE, default="White")
-	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
+	user = models.ForeignKey(User, to_field = "username", on_delete = models.CASCADE, default = "John Doe")
 	class Meta:
 		unique_together = ('repertoire_name', 'user')
 	def __str__(self):
@@ -24,7 +21,7 @@ class RepertoireVariants(models.Model):
 	structure = models.CharField(max_length = 30)
 	moves = models.CharField(max_length = 300)
 	repertoire_name = models.CharField(max_length = 30)
-	user = models.ForeignKey(User, to_field = "name", on_delete = models.CASCADE, default = "John Doe")
+	user = models.ForeignKey(User, to_field = "username", on_delete = models.CASCADE, default = "John Doe")
 	class Meta:
 		unique_together = ('moves', 'repertoire_name', 'user')
 	def __str__(self):

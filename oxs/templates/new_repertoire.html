@@ -4,9 +4,9 @@
 		<title>New Repertoire</title>
 	</head>
 	<body>
-		<h2>Crear un Nuevo Repertorio {{ user.0 }}<h2>
+		<h2>Crear un Nuevo Repertorio {{ user.username }}<h2>
 		<form method="post" 
-		action="{% url 'process_new_repertoire' user=user %}">
+		action="{% url 'process_new_repertoire' %}">
 			{% csrf_token %}
 			<label for="repertoire_name">Nombre del Repertorio: </label>
 			<input type="text" name="repertoire_name" required>
