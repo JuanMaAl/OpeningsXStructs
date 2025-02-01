@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{% static 'styles.css' %}">
 	</head>
 	<body>
-		<h1 class="page_tittle">
+		<h1 class="page_title">
 		Home de {{ user.username }}
 		<a class="red_a" href="{% url 'logout_user' %}">
 		    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-house-x-fill" viewBox="0 0 16 16">
@@ -20,7 +20,7 @@
 		</a>
 		</h1>
 		<hr>
-		<h2 class="page_tittle">Listado de Repertorios</h2>
+		<h2 class="page_title">Listado de Repertorios</h2>
 
 		<ul class='d-flex justify-content-center'>
 			{% for repertoire in repertoires %}

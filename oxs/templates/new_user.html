@@ -1,26 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Nuevo Usuario</title>
+		{% load bootstrap5 %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		<link rel="stylesheet" href="{% static 'styles.css' %}">
 	</head>
 	<body>
-		<h2>Crear un Nuevo Usuario<h2>
+		<h2 class="page_title">Crear un Nuevo Usuario<h2>
 		<form method="post" 
-		action="{% url 'process_new_user' %}">
+		action="{% url 'process_new_user' %}"
+		class="row justify-content-center">
 			{% csrf_token %}
-			<label for="username">Nombre del Usuario: </label>
-			<input type="text" name="username" required>
+			<div class="col-md-8">
+				<label for="username" class="form-label">
+				Nombre del Usuario: 
+				</label>
+				<input type="text" name="username" 
+				class="form-control login_input" required>
+			</div>
 			<br>
-			<label for="email">Correo Electrónico: </label>
-			<input type="email" name="email" required>
+			<div class="col-md-8">
+				<label for="email" class="form-label">
+				Correo Electrónico: 
+				</label>
+				<input type="email" name="email" 
+				class="form-control login_input" required>
+			</div>
 			<br>
-			<label for="password1">Contraseña: </label>
-			<input type="password" name="password1" required>
+			<div class="col-md-8">
+				<label for="password1" class="form-label">
+				Contraseña:<br> 
+				</label>
+				<input type="password" name="password1" 
+				class="form-control login_input" required>
+			</div>
 			<br>
-			<label for="password2">Contraseña: </label>
-			<input type="password" name="password2" required>
+			<div class="col-md-8">
+				<label for="password2" class="form-label">
+				Repetir la contraseña: 
+				</label>
+				<input type="password" name="password2"
+				class="form-control last_input" required>
+			</div>
 			<br>
-			<button type="submit">Registrarse</button>
+			<div class="col-md-8">
+				<button type="submit" class="btn">
+				 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+</svg><span class="p-3">Registrarse</span>
+				</button>
+			</div>
 		</form>
 	</body>
 </html>

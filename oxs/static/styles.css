@@ -2,6 +2,9 @@ body {
 	background-color: #5D8736;
 	text-align: center;
 	color: #F4FFC3;
+	font-size: 16px;
+}
+.label{
 	font-size: 3em;
 }
 
@@ -9,8 +12,20 @@ a {
 background-color: #809D3C;
 color: #F4FFC3;
 padding: 8px;
-border-radius: 20%;
+border-radius: 6%;
 margin: 10px;
+font-size: 3em;
+}
+.login_input{
+margin-bottom: 10px;
+margin-left: 10px;
+font-size: 2rem;
+}
+
+.last_input{
+  margin-bottom: 40px;
+  margin-left: 10px;
+  font-size: 2rem;
 }
 
 .red_a
@@ -20,13 +35,19 @@ color: #1D1616;
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 3em;
 }
 
-.page_tittle{
+.page_title{
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: 1.25em;
+  font-size: 3em;
+}
+
+.main_tittle{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 2.5em;
 }
 
 .card {
@@ -52,4 +73,6 @@ h3 {
 .btn{
   background-color: #809D3C;
   color: #F4FFC3;
+  font-size: 5em;
+  border-radius: 6%;
 }

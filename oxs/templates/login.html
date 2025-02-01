@@ -1,28 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>login</title>
+		{% load bootstrap5 %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		<link rel="stylesheet" href="{% static 'styles.css' %}">
 	</head>
 	<body>
-	{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-		<form method="post">
+	<h1 class="main_tittle">Openings<br>X<br>Structs</h1>
+		<form method="post" class="row justify-content-center">
 			{% csrf_token %}
-			<label for="username">Usuario:</label>
-			<input type="text" name="username" required>
-			<label for="password">Password:</label>
-			<input type="password" name="password" required>
-			<button type="submit">Iniciar Sesión</button>
+			<div class="col-md-8">
+				<label for="username" class="form-label">Usuario:</label>
+				<input type="text" name="username" class="form-control login_input"
+				required>
+			</div>
+			<br>
+			<div class="col-md-8">
+				<label for="password" class="form-label">Password:</label>
+				<input type="password" name="password" class="form-control last_input"
+				required>
+			</div>
+			<br>
+			<div class="col-md-8">
+				<button type="submit" class="btn">
+				Iniciar Sesión
+				</button>
+			</div>
 		</form>
 		<br><br>
-		<a 
-					href="/new-user/">
-					Registrar un nuevo usuario
-		</a>
+		<button href="/new-user/" class="btn">
+				 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+</svg><span class="p-3">Nuevo usuario</span>
+		</button>
+		<br>
+		<br>
+		{% if messages %}
+	<ul class="message red_a list-unstyled m-4">
+    	{% for message in messages %}
+    	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+		{{ message }}
+		</li>
+    	{% endfor %}
+		</ul>
+		{% endif %}
 	</body>
 </html>
