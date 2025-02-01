@@ -1,0 +1,43 @@
+body {
+	background-color: #5D8736;
+	text-align: center;
+	color: #F4FFC3;
+	font-size: 3em;
+}
+
+a {
+background-color: #809D3C;
+color: #F4FFC3;
+padding: 15px;
+border-radius: 50%;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+.page-tittle{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 1.25em;
+}
+
+.card {
+	background-color: #A9C46C;
+}
+
+.accordion-button{
+  	background-color: #A9C46C;
+  	color: #F4FFC3;
+	  font-size: 1.15em;
+}
+
+.accordion-body{
+  	background-color: #A9C46C;
+  	color: #F4FFC3;
+}
+
+.btn{
+  background-color: #809D3C;
+  color: #F4FFC3;
+}
