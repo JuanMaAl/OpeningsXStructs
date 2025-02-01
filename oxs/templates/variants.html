@@ -2,31 +2,54 @@
 <html>
 	<head>
 		<title>Variantes</title>
+		{% load bootstrap5 %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		<meta name="viewport" content="width=device-width,
+		initial-scale=1">
 	</head>
-	<body>
-		<h2>Variantes</h2>
-
-		<a href="/home">Volver al home</a>
-		<ul>
+	<body class="bg-success bg-opacity-25">
+		<span class="d-flex justify-content-center p-4">
+			<h1>
+			Variantes
+				<a href="/home" class="mx-1 btn btn-primary p-2">
+			  		<svg xmlns="http://www.w3.org/2000/svg" width="30"
+			  		height="30" fill="currentColor"
+			  		class="bi bi-house-fill" viewBox="0 0 16 16">
+    				<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5
+					0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0
+					.708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 
+					0 0 0-.5.5v1.293z"/>
+    				<path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 
+					1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+  					</svg>
+  					<span class="p-2">Home</span>
+				</a>
+			</h1>
+		</span>
+		<hr>
+		<ul class="list-unstyled d-flex flex-column align-items-center">
 		{% for variant in variants %}
-			<li>{{ variant.moves }}</li>
-			<form method="POST" 
-			action="{% url 'add_to_repertoire'  %}">
-				{% csrf_token %}
-				<input type="hidden" name="structure" 
-				value="{{ structure }}">
-				<input type="hidden" name="moves" 
-				value="{{ variant.moves }}">
-				<input type="hidden" name="repertoire_name" 
-				value="{{ repertoire_name }}">
-				<input type="hidden" name="user_id" 
-				value="{{ user_id }}">
-				<input type="hidden" name="repertoire_color" 
-				value="{{ repertoire_color }}">
-				<button type="Submit">Añadir al Repertorio</button>
-			</form>
-			<br>
-			<br>
+			<div class="border border-white p-2 m-2 w-75">
+				<li>{{ variant.moves }}</li>
+				<form method="POST" 
+				action="{% url 'add_to_repertoire'  %}">
+					{% csrf_token %}
+					<input type="hidden" name="structure" 
+					value="{{ structure }}">
+					<input type="hidden" name="moves" 
+					value="{{ variant.moves }}">
+					<input type="hidden" name="repertoire_name" 
+					value="{{ repertoire_name }}">
+					<input type="hidden" name="user_id" 
+					value="{{ user_id }}">
+					<input type="hidden" name="repertoire_color" 
+					value="{{ repertoire_color }}">
+					<button type="Submit" class="btn btn-success m-2">
+						Añadir al Repertorio
+					</button>
+				</form>
+			</div>
 		{% endfor %}
 		</ul>
 	</body>
