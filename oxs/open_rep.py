@@ -7,7 +7,7 @@ from .models import RepertoireVariants
 def open_repertoire(request, repertoire_name, repertoire_color):
 	try:
 		user = request.user
-		variants = RepertoireVariants.objects.filter(user_id=user, repertoire_name = repertoire_name)
+		variants = RepertoireVariants.objects.filter(user_id=user, repertoire_name = repertoire_name).order_by('structure')
 	except RepertoireVariants.DoesNotExist:
 		variants = []
 	context = {
