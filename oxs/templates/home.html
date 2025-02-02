@@ -9,7 +9,7 @@
 		initial-scale=1">
 	</head>
 	<body class="bg-success bg-opacity-25">
-		<span class="d-flex justify-content-center p-4">
+		<span class="d-flex justify-content-center pt-3">
 			<h1>
 			Home de {{ user.username }}
 			<a class="btn btn-danger" href="{% url 'logout_user' %}">
@@ -28,7 +28,7 @@
 			</a>
 			</h1>
 		</span>
-		<hr>
+		<hr class="border-top border-dark border-4">
 		<span class="d-flex justify-content-center p-4">
 			<h2 class="page_title">Listado de Repertorios</h2>
 				<a href="/new-repertoire/" class="btn btn-success ms-2">
