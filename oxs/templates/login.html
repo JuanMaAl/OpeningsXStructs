@@ -52,16 +52,11 @@
 				<span class="p-3">Nuevo usuario</span>
 			</a>
 		</div>
-		{% if messages %}
-		<br>
-		<hr>
-	<ul class="message text-danger list-unstyled m-4">
-    	{% for message in messages %}
-    	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-		{{ message }}
-		</li>
-    	{% endfor %}
-		</ul>
+		{% if error %}
+			<br><br>
+    		<div class="text-danger fw-bold d-flex justify-content-center">
+        		{{ error }}
+    		</div>
 		{% endif %}
 	</body>
 </html>

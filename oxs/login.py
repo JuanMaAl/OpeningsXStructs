@@ -14,7 +14,9 @@ def login_user(request):
 			return redirect (f'/home')
 		else:
 		    #	error_message = "Login fallido: usuario o password incorrecto"
-		    messages.error(request, "Login fallido, usuario o password incorrecto")
+		   # messages.error(request, "Login fallido, usuario o password incorrecto")
+		        return render(request, 'login.html', 
+				{"error":"Login fallido, usuario o password incorrecto"})
 
 	return render(request, 'login.html')
 
