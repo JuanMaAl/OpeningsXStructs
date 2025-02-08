@@ -2,6 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import RepertoireVariants
 
+# Esta vista sirve para eliminar una variante. Toma los datos de un 
+# formulario oculto asociado al botón Eliminar asociado a la variante
+# concreta. Con los datos obtenidos del método post borra el registro de
+# la tabla RepertoireVariants
+
 def del_from_repertoire(request):
 	if request.method == 'POST':
 		structure = request.POST.get('structure')

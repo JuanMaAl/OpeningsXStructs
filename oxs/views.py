@@ -10,8 +10,7 @@ from .add_to_rep import add_to_repertoire
 from .del_from_rep import del_from_repertoire
 from .login import login_user, logout_user
 
-
-# Create your views here.
+# Esta vista abre la plantilla home del usuario. 
 
 @login_required(login_url='/')
 def home(request):
@@ -23,6 +22,9 @@ def home(request):
 	}
 	return render(request, 'home.html', context)
 
+# Esta vista abre la plantilla estructuras pasandole todas las estructuras
+# de la tabla como contexto.
+
 def structures(request, repertoire_name, repertoire_color):
 	structures = Structures.objects.all()
 	user = request.user
@@ -33,6 +35,9 @@ def structures(request, repertoire_name, repertoire_color):
 		'structures' : structures
 	}
 	return render(request, 'structures.html', context)
+
+# Esta vista sirve para abrir la plantilla variants pasandole como contexto
+# las variantes filtradas por estructura y color de la tabla Variants. 
 
 def variants(request, repertoire_name, repertoire_color, 
 structure_name):

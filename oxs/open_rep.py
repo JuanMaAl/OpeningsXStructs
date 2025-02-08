@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import RepertoireVariants
 
+# Esta vista sirve para cargar la plantilla de repertorio abierto pasándole
+# el contexto que es previamente filtrado en RepertoireVariants. 
+
 @login_required(login_url='/')
 def open_repertoire(request, repertoire_name, repertoire_color):
 	try:

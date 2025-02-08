@@ -40,6 +40,7 @@
 			</h1>
 		</span>
 		<hr class="border-top border-dark border-4">
+		<!-- este mensaje solo se mostrará si se ha recibido un mensaje de error mediante el sistema de errors de Django -->
 		{% if messages %}
     		{% for message in messages %}
         		<div class="text-danger fw-bold d-flex 
@@ -48,6 +49,8 @@
         		</div>
     		{% endfor %}
 		{% endif %}
+
+		<!-- Aquí se listan mediante un blucle for each todas las variantes del repertorio del usuario obtenidas del contexto de variants -->
 		<ul class="list-unstyled d-flex flex-column align-items-center">
 		{% for variant in variants %}
 			<br>
