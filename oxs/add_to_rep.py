@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import RepertoireVariants
 
 def add_to_repertoire(request):
@@ -18,6 +19,7 @@ def add_to_repertoire(request):
 		try:
 			new_variation.save()
 		except:
+			messages.error(request, "No puedes tener dos veces la misma variante en el repertorio")
 			return redirect(f'/open-repertoire/{ repertoire_name }/{ repertoire_color}/')
-			
+		
 		return redirect(f'/open-repertoire/{ repertoire_name }/{ repertoire_color}/')

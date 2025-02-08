@@ -40,6 +40,14 @@
 			</h1>
 		</span>
 		<hr class="border-top border-dark border-4">
+		{% if messages %}
+    		{% for message in messages %}
+        		<div class="text-danger fw-bold d-flex 
+				justify-content-center">
+            		{{ message }}
+        		</div>
+    		{% endfor %}
+		{% endif %}
 		<ul class="list-unstyled d-flex flex-column align-items-center">
 		{% for variant in variants %}
 			<br>
